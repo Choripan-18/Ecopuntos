@@ -22,4 +22,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("ecopuntosapp.urls"))
     path("", views.index)
-]
+    ]
