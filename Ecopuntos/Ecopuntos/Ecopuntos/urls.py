@@ -20,7 +20,6 @@ from ecopuntosapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", views.index),
-    path("inicio/", views.iniciohtml)
+    path("", include("ecopuntosapp.urls"))
     ]
 

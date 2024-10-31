@@ -1,11 +1,8 @@
 from django.shortcuts import render
 
 
-def index(request):
-    return render(request, "ecopuntosapp/index.html")
 
-
-def iniciohtml(request):
+def inicio(request):
     return render(request, "ecopuntosapp/inicio.html")
 
 
