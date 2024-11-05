@@ -6,6 +6,18 @@ def home(request):
 def inicio(request):
     return render(request, "ecopuntosapp/inicio.html")
 
+def faq(request):
+    return render(request, "ecopuntosapp/FAQ.html")
+
+def search(request):
+    return render(request, "ecopuntosapp/search.html")
+
+def ourselves(request):
+    return render(request, "ecopuntosapp/wha.html")
+
+def forums(request):
+    return render(request, "ecopuntosapp/forums.html")
+
 
 
 # Create your views here.
