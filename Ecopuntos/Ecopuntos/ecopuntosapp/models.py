@@ -6,6 +6,7 @@ class Accounts(models.Model):
     username = models.CharField(max_length= 15)
     password = models.CharField(max_length= 15)
     trust = models.IntegerField()
+    moderator = models.IntegerField(default= 0 )
 
 def __str__(self):
     return self.name
