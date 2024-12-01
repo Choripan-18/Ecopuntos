@@ -13,7 +13,7 @@ def search(request):
     return render(request, "ecopuntosapp/search.html")
 
 def ourselves(request):
-    return render(request, "ecopuntosapp/wha.html")
+    return render(request, "ecopuntosapp/AboutUs.html")
 
 def forums(request):
     return render(request, "ecopuntosapp/forums.html")
