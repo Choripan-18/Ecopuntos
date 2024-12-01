@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="..\..\..\static\ecopuntosapp\css\AboutUs.css">
+    <link rel="stylesheet" href="../../../static/ecopuntosapp/css/navbar.css">
     <title>Sobre Nosotros</title>
 </head>
 
 <body>
-    <div class="back-button">
-        <a href="{% url 'home' %}">
-            <img src="..\..\..\static\ecopuntosapp\img\logo.png" alt="Volver a la página principal">
-        </a>
-    </div>
+    {% include 'ecopuntosapp/navbar.html' %}
 
     <h1 style="text-align: center;">Nuestro Equipo de Desarrollo</h1>
 
