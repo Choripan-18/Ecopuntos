@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Objects
 
 def home(request):
     return render(request, "ecopuntosapp/ecopuntos.html")
