@@ -1,12 +1,78 @@
-<div class="img">
-    <a href="">
-        <img src="static/ecopuntosapp/img/logo.png" alt="logoecopuntos">
-    </a>
-</div>
-<nav class="menu">
-    <a href="forums/">FORO</a>
-    <a href="ourselves/">SOBRE NOSOTROS</a>
-    <a href="#">IMPACTO</a>
-    <a href="FAQ/">FAQ</a>
-    <a class="inicio" href="login/">REGISTRO/INICIAR SESION</a>
-</nav>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #AFD480;
+            font-family: "League Spartan", sans-serif;
+        }
+
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            background-color: #7F9F56;
+            padding: 0 20px;
+        }
+
+        .img img {
+            width: 80px;
+            height: auto;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            gap: 25px;
+            margin-left: 20px;
+        }
+
+        .menu a {
+            border-radius: 100px;
+            color: black;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 5px 15px;
+            transition: color 0.3s ease;
+        }
+
+        .menu a:hover {
+            color: #e0ffb7;
+        }
+
+        .inicio {
+            margin-left: auto;
+            margin-right: 1%;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="img">
+            <a href="/">
+                <img src="{% static 'ecopuntosapp/img/logo.png' %}" alt="Logo Ecopuntos">
+            </a>
+        </div>
+        <nav class="menu">
+            <a href="{% url 'forums' %}">FORO</a>
+            <a href="{% url 'ourselves' %}">SOBRE NOSOTROS</a>
+            <a href="#">IMPACTO</a>
+            <a href="{% url 'faq' %}">FAQ</a>
+            <a class="inicio" href="login/">REGISTRO/INICIAR SESIÓN</a>
+        </nav>
+    </header>
+</body>
+</html>
