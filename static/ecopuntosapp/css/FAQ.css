@@ -21,32 +21,32 @@
 body {
     width: 100%;
     height:  auto;
-    padding: 3%;
     background-color: var(--softColor);
 
 }
 
-.header {
-        background-image: url(../img/Fondo-FAQ.jpg);
-        background-color: rgba(0, 0, 0, 0.5); /* Color negro semitransparente para oscurecer */
-        background-blend-mode: darken; /* Combina el color con la imagen */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 5% 3%;
-        border-radius: 30px;
-        height: 300px; /* Ajusta según lo necesario */
-        color: var(--whiteColor);
-        text-align: center; /* Centra el texto */
-    }
+.header-02 {
+    background-image: url(../img/Fondo-FAQ.jpg);
+    background-color: rgba(0, 0, 0, 0.5); /* Color negro semitransparente para oscurecer */
+    background-blend-mode: darken; /* Combina el color con la imagen */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 15px;
+    padding: 5% 3%;
+    border-radius: 30px;
+    height: 300px; /* Ajusta según lo necesario */
+    color: var(--whiteColor);
+    text-align: center; /* Centra el texto */
+}
     
     
 
-.header .content {
+.header-02 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -197,4 +197,3 @@ header-desc {
     transform: rotate(-45deg);
     transition: 0.4s ease-in-out;
 }
-
