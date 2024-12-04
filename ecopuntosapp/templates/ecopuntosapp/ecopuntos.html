@@ -5,27 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../../static/ecopuntosapp/css/ecopuntos.css">
     <link rel="stylesheet" href="../../../static/ecopuntosapp/css/navbar.css">
+    <link rel="stylesheet" href="../../../static/ecopuntosapp/js/suggestions.js">
+    <link rel="stylesheet" href="../../../static/ecopuntosapp/js/main.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Ecopuntos</title>
 </head>
 <body>
-    <main class="main">
-        <header class="header">
-            {% include 'ecopuntosapp/navbar.html' %}
-        </header>
-        <div class="barrabusqueda">
-            <input type="text" placeholder="Buscar...">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    <header class="header">
+        {% include 'ecopuntosapp/navbar.html' %}
+    </header>
+    <div class="container">
+        <div class="search-input-box">
+            <input type="text" id="inputSearch" placeholder="¿Qué quieres reciclar?" />
+            <a href="#" id= "searchButton" target="_blank">
+                <i class="fa-solid fa-magnifying-glass icon"> </i>
+            </a>
+            <ul class="container-suggestions">
+                <li>sugerencia 1</li>
+                <li>sugerencia 2</li>
+                <li>sugerencia 3</li>
+            </ul>
         </div>
-        <div class="ultimo">
-            <p id="eslogan">
-                "Tu granito de <br> arena es <br> importante"
-            </p>
-        </div>
-        <footer></footer>
-    </main>
+    </div>
+    <div class="ultimo">
+        <p id="eslogan">
+            "Tu granito de <br> arena es <br> importante"
+        </p>
+    </div>
+    <script src="../../../static/ecopuntosapp/js/suggestions.js"></script>
+    <script src="../../../static/ecopuntosapp/js/main.js"></script>
+    <script>
+        document.getElementById('searchButton').addEventListener('click', function(event) {
+            event.preventDefault();
+            const inputSearch = document.getElementById('inputSearch').value;
+            this.href = `http://127.0.0.1:8000/search/${inputSearch}`;
+            window.location.href = this.href;
+        });
+    </script>
 </body>
 </html>
