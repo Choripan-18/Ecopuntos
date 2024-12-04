@@ -26,7 +26,8 @@
         </div>
         
         <div class="form-container sign-in">
-            <form>
+ 
+            <form action="" method="post">
                 <h1>Inicia sesión</h1>
                 <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-instagram"></i></a>
@@ -34,10 +35,12 @@
                     <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
                 </div>
                 <span>Usa tu correo y contraseña</span>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Contraseña">
+                
+                {% csrf_token %}
+                {{ form }}
+
                 <a href="#">¿Olvidaste tu contraseña?</a>
-                <button>Iniciar sesión</button>
+                <input type="submit" value="ingresar">
             </form>
         </div>
         

@@ -1,12 +1,34 @@
 from django.shortcuts import redirect, render
 from .models import Objects
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, LoginForm
 from django.contrib.auth import authenticate, login
+from django.http import HttpResponse
 
 def home(request):
     return render(request, "ecopuntosapp/ecopuntos.html")
 
-def inicio(request):
+def iniciolog(request):
+    
+    if request.method == "POST":
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            user = authenticate(request, username = form.cleaned_data['username'],
+                                password = form.cleaned_data['password'])
+            if user is not None:
+                if user.is_active:
+                    login(request,user)
+                    return HttpResponse("usuario autenticado")
+                else:
+                    return HttpResponse("usuario no activo")
+            else:
+                return HttpResponse("la informacion no es correcta")
+    else:
+        form = LoginForm()
+        return render(request, "ecopuntosapp/inicio.html", {"form": form})
+    
+
+
+def inicioreg(request):
     data = {
         "form": CustomUserCreationForm()
     }
