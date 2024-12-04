@@ -1,9 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-    font-family: "Poppins", serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    font-family: Poppins;
+}
+
+body {
+	background-color: #414b57;
+}
+
+.container {
+	max-width: 800px;
+    padding-top: 100px;
+    padding-left: 100px;
+}
+
+.search-input-box {
+	width: 100%;
+	background-color: #2f3640;
+	border-radius: 5px;
+	position: relative;
+	color: #f5f6f4;
+	box-shadow: 0 1px 5px 3px rgba(0, 0, 0, 0.12);
+}
+
+.search-input-box input {
+	width: 100%;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	height: 55px;
+	padding: 0 60px 0 20px;
+	font-size: 18px;
+}
+
+.icon {
+	position: absolute;
+	top: 15px;
+	right: 25px;
+	font-size: 22px;
+	cursor: pointer;
+	color: #0d141f;
+}
+
+.container-suggestions {
+	max-height: 280px;
+	opacity: 0;
+	pointer-events: none;
+	padding: 0;
+	overflow-y: auto;
+}
+
+.search-input-box.active .container-suggestions {
+	opacity: 1;
+	pointer-events: auto;
+	padding: 10px 8px;
+}
+
+.search-input-box.active .container-suggestions li {
+	display: block;
+}
+
+.container-suggestions li {
+	list-style: none;
+	width: 100%;
+	padding: 8px 12px;
+	border-radius: 5px;
+	display: none;
+}
+
+.container-suggestions li:hover{
+    background-color: #414b57;
 }
