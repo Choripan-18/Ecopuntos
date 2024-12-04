@@ -51,6 +51,7 @@
         .inicio {
             margin-left: auto;
             margin-right: 1%;
+            background-color: #64813f;
         }
     </style>
 </head>
@@ -66,7 +67,13 @@
             <a href="{% url 'ourselves' %}">SOBRE NOSOTROS</a>
             <a href="#">IMPACTO</a>
             <a href="{% url 'faq' %}">FAQ</a>
-            <a class="inicio" href="{% url 'login' %}">REGISTRO/INICIAR SESIÓN</a>
+            
+
+            {% if user.is_authenticated %}
+                <a class="inicio" href="{% url 'perfil' %}" class="action_btn">{{ user.username }}</a>
+            {% else %}
+                <a class="inicio" href="{% url 'login' %}" class="action_btn">Get Started</a>
+            {% endif %}
         </nav>
     </header>
 </body>

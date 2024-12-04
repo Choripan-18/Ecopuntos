@@ -58,6 +58,9 @@ def ourselves(request):
 def forums(request):
     return render(request, "ecopuntosapp/forums.html")
 
+def perfil(request):
+    return render(request, "ecopuntosapp/perfil.html")
+
 
 
 # Create your views here.
