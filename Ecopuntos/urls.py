@@ -20,6 +20,8 @@ from ecopuntosapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include("ecopuntosapp.urls"))
+    path("", include("ecopuntosapp.urls")),
+    path("", include("django.contrib.auth.urls"))
+
     ]
 

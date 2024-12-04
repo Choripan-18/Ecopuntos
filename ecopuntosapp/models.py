@@ -2,11 +2,14 @@ from django.db import models
 
 # Create your models here.
 
-class Accounts(models.Model):
+class useraccounts(models.Model):
     username = models.CharField(max_length= 15)
     password = models.CharField(max_length= 15)
-    trust = models.IntegerField()
-    moderator = models.IntegerField(default= 0 )
+    email = models.CharField(max_length= 25)
+    trust = models.IntegerField(default=0)
+    moderator = models.IntegerField(default= 0)
+
+    
 
 def __str__(self):
     return self.username
@@ -24,7 +27,7 @@ opciones_pedidas = [
     [1, "lugar"]
 ]
 
-class request(models.Model):
+class userrequest(models.Model):
     reqname = models.CharField(max_length=20)
     reqemail = models.CharField(max_length=30)
     typereq = models.IntegerField(choices=opciones_pedidas)
