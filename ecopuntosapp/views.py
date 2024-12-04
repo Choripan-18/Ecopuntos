@@ -17,7 +17,7 @@ def iniciolog(request):
             if user is not None:
                 if user.is_active:
                     login(request,user)
-                    return HttpResponse("usuario autenticado")
+                    return redirect("home")
                 else:
                     return HttpResponse("usuario no activo")
             else:
@@ -40,7 +40,7 @@ def inicioreg(request):
                                  password= formularioreg.cleaned_data["password"])
             login (request,user)
             
-            return redirect(to="home")
+            return redirect(to="{% url 'home' %}")
         data ["form"] = formularioreg
 
 
