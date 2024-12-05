@@ -34,3 +34,11 @@ class userrequest(models.Model):
     requestext = models.TextField(max_length=200)
 def __str__(self):
     return self.reqname
+
+class Post(models.Model):
+    author = models.CharField(max_length=100) 
+    message = models.TextField() 
+    created_at = models.DateTimeField(auto_now_add=True)
+
+def __str__(self):
+    return self.author

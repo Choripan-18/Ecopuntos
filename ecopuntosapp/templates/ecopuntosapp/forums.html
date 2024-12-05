@@ -1,13 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link ref="stylesheet" href="..\..\..\static\ecopuntosapp\css\forums.css">
-    <title>Foros</title>
+    <title>EcoForo</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #368b0bbd; /* Verde pastel claro */
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #9d6032; /* Verde hoja medio */
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            color: #ffffff; /* Café oscuro */
+            text-align: center;
+        }
+        .post {
+            border-bottom: 1px solid #81C784; /* Verde brillante */
+            padding: 10px 0;
+        }
+        .post:last-child {
+            border-bottom: none;
+        }
+        .post-author {
+            font-weight: bold;
+            color: #4E342E; /* Café oscuro */
+        }
+        .post-message {
+            margin: 5px 0 0 0;
+        }
+        form {
+            background: #D7CCC8; /* Café pastel claro */
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #A1887F; /* Café medio */
+            border-radius: 5px;
+        }
+        button {
+            background: #A1887F; /* Café medio */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #4E342E; /* Café oscuro */
+        }
+    </style>
 </head>
 <body>
-    <h1>hola mundo</h1>
-    <div></div>
+    <div class="container">
+        <h1>Ecoforo</h1>
+        <form id="postForm">
+            <div>
+                <label for="author">Nombre:</label>
+                <input type="text" id="author" required>
+            </div>
+            <div>
+                <label for="message">Mensaje:</label>
+                <textarea id="message" rows="4" required></textarea>
+            </div>
+            <button type="submit">Publicar</button>
+        </form>
+        <hr>
+        <div id="posts">
+            <!-- Aquí aparecerán las publicaciones -->
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('postForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const author = document.getElementById('author').value;
+            const message = document.getElementById('message').value;
+
+            const postContainer = document.createElement('div');
+            postContainer.className = 'post';
+
+            const postAuthor = document.createElement('div');
+            postAuthor.className = 'post-author';
+            postAuthor.textContent = author;
+
+            const postMessage = document.createElement('div');
+            postMessage.className = 'post-message';
+            postMessage.textContent = message;
+
+            postContainer.appendChild(postAuthor);
+            postContainer.appendChild(postMessage);
+
+            document.getElementById('posts').appendChild(postContainer);
+
+            document.getElementById('author').value = '';
+            document.getElementById('message').value = '';
+        });
+    </script>
 </body>
 </html>
