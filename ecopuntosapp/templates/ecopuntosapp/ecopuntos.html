@@ -40,7 +40,7 @@
         document.getElementById('searchButton').addEventListener('click', function(event) {
             event.preventDefault();
             const inputSearch = document.getElementById('inputSearch').value;
-            this.href = `http://127.0.0.1:8000/search/${inputSearch}`;
+            this.href = `http://127.0.0.1:8000/${inputSearch}`;
             window.location.href = this.href;
         });
     </script>
