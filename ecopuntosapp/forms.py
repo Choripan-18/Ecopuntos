@@ -1,5 +1,5 @@
 from django import forms
-from .models import userrequest, useraccounts
+from .models import userrequest, useraccounts, Post
 from django.contrib.auth.forms import UserCreationForm
 
 
@@ -19,3 +19,8 @@ class LoginForm(forms.Form):
 
 class CustomUserCreationForm(UserCreationForm):
     pass 
+
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ['author', 'mesage']

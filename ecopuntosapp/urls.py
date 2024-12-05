@@ -11,5 +11,6 @@ urlpatterns = [
     path ("ourselves/", ourselves, name="ourselves"),
     path ("profile/", perfil, name="perfil"),
     path ("logout/", LogoutView.as_view(next_page="home"), name="logout"),
-    path ("impacto/", impacto, name="impacto")
+    path ("impacto/", impacto, name="impacto"),
+    path('', views.forum, name='forum'),
     ]

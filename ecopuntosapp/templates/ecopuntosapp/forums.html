@@ -79,8 +79,12 @@
             <button type="submit">Publicar</button>
         </form>
         <hr>
-        <div id="posts">
-            <!-- Aquí aparecerán las publicaciones -->
+        <div id="posts"> {% for post in posts %} 
+            <div class="post"> 
+                <div class="post-author">{{ post.author }}</div> 
+                <div class="post-message">{{ post.message }}</div> 
+                <div class="post-date">{{ post.created_at }}</div> 
+            </div> {% endfor %} 
         </div>
     </div>
 

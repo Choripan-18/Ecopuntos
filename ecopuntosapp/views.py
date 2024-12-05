@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
-from .models import Objects
-from .forms import CustomUserCreationForm, LoginForm
+from .models import Objects, Post
+from .forms import CustomUserCreationForm, LoginForm, PostForm
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
 
@@ -64,6 +64,15 @@ def perfil(request):
 def impacto(request):
     return render(request, "ecopuntosapp/impacto.html")
 
-
+def forum(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('forums')
+    else:
+        form = PostForm()
+    posts = Post.objects.all().order_by('-created_at')
+    return render(request, 'forums.html', {'form': form, 'posts': posts})
 
 # Create your views here.
