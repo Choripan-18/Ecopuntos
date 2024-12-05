@@ -61,6 +61,9 @@ def forums(request):
 def perfil(request):
     return render(request, "ecopuntosapp/perfil.html")
 
+def impacto(request):
+    return render(request, "ecopuntosapp/impacto.html")
+
 
 
 # Create your views here.

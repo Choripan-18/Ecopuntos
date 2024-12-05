@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="../../../static/ecopuntosapp/css/impacto.css">
+      <title>Impacto Ambiental</title>
+      <style>
+          body {
+              margin: 0;
+              font-family: "League Spartan", sans-serif;
+              background-color: #AFD480;
+          }
+
+          .content {
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 20px;
+              padding-top: 100px; /* Espacio para la navbar fija */
+              text-align: center;
+              background-color: #cce0b3;
+          }
+
+          .content h1 {
+              font-size: 2.5em;
+              color: #3C6E47;
+              margin-bottom: 20px;
+          }
+
+          .content p {
+              font-size: 1.2em;
+              line-height: 1.6;
+              color: #4A4A4A;
+              margin-bottom: 20px;
+          }
+
+          .content img {
+              width: 100%;
+              max-width: 600px;
+              height: auto;
+              margin: 20px 0;
+              border-radius: 10px;
+          }
+
+          .highlight {
+              color: #3C6E47;
+              font-weight: bold;
+          }
+      </style>
+  </head>
+  <body>
+      <!-- Navbar incluida -->
+      {% include 'ecopuntosapp/navbar.html' %}
+
+      <!-- Contenido principal -->
+      <div class="content">
+          <h1>Impacto Ambiental de Nuestro Proyecto</h1>
+          <p>
+              Este proyecto tiene como objetivo <span class="highlight">promover el reciclaje</span> y 
+              aumentar la conciencia ambiental en nuestra comunidad. Al proporcionar una plataforma 
+              que permite identificar puntos de reciclaje cercanos, también incentivamos a las personas 
+              a <span class="highlight">reducir la cantidad de residuos</span> que terminan en vertederos.
+          </p>
+          <img src="{% static 'ecopuntosapp/img/impacto.png' %}" alt="Impacto Ambiental">
+          <p>
+              A través de la inclusión de un foro interactivo, esperamos fomentar el diálogo sobre 
+              temas ambientales y <span class="highlight">crear una red de ciudadanos comprometidos</span> 
+              con la sostenibilidad. El impacto de esta iniciativa no solo se medirá en términos de 
+              toneladas de residuos reciclados, sino también en el cambio cultural hacia un estilo de 
+              vida más sostenible.
+          </p>
+          <p>
+              ¡Juntos podemos marcar la diferencia! 
+              <span class="highlight">¿Estás listo para contribuir al cambio?</span>
+          </p>
+      </div>
+  </body>
+</html>
