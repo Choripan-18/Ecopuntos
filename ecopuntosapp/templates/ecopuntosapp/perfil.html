@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="../../../static/ecopuntosapp/css/FAQ.css">
+      <title>Perfil</title>
+      <style>
+          body {
+              margin: 0;
+              font-family: Arial, sans-serif;
+              background-color: #F4F4F4;
+          }
+
+          .content {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              min-height: calc(100vh - 100px); /* Ajusta para no superponerse con la navbar */
+              padding-top: 100px; /* Espacio para la navbar fija */
+          }
+
+          .logout-button {
+              padding: 10px 20px;
+              font-size: 16px;
+              color: white;
+              background-color: #e70000;
+              border: none;
+              border-radius: 5px;
+              text-decoration: none;
+              cursor: pointer;
+              transition: background-color 0.3s ease;
+          }
+
+          .logout-button:hover {
+              background-color: #870000;
+          }
+      </style>
+  </head>
+<body>
+    <!-- Navbar incluida -->
+    {% include 'ecopuntosapp/navbar.html' %}
+
+    <!-- Contenido centrado -->
+    <div class="content">
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="logout-button">Cerrar Sesión</button>
+        </form>
+    </div>
+</body>
+</html>
