@@ -17,8 +17,8 @@
               display: flex;
               justify-content: center;
               align-items: center;
-              min-height: calc(100vh - 100px); /* Ajusta para no superponerse con la navbar */
-              padding-top: 100px; /* Espacio para la navbar fija */
+              min-height: calc(100vh - 100px);
+              padding-top: 100px;
           }
 
           .logout-button {
@@ -39,10 +39,8 @@
       </style>
   </head>
 <body>
-    <!-- Navbar incluida -->
     {% include 'ecopuntosapp/navbar.html' %}
 
-    <!-- Contenido centrado -->
     <div class="content">
         <form action="{% url 'logout' %}" method="post">
             {% csrf_token %}
