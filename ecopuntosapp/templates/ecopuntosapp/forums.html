@@ -8,23 +8,26 @@
         body {
             font-family: 'Times New Roman', Times, serif, sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #368b0bbd; /* Verde pastel claro */
+            padding: 0;
+            background-color: #368b0bbd;
+        }
+        .navbar-space {
+            margin-bottom: 20px;
         }
         .container {
             max-width: 800px;
             margin: auto;
-            background: #9d6032; /* Verde hoja medio */
+            background: #235a07bd;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
         h1 {
-            color: #ffffff; /* Café oscuro */
+            color: #ffffff;
             text-align: center;
         }
         .post {
-            border-bottom: 1px solid #81C784; /* Verde brillante */
+            border-bottom: 1px solid #81C784;
             padding: 10px 0;
         }
         .post:last-child {
@@ -32,13 +35,13 @@
         }
         .post-author {
             font-weight: bold;
-            color: #4E342E; /* Café oscuro */
+            color: #4E342E;
         }
         .post-message {
             margin: 5px 0 0 0;
         }
         form {
-            background: #D7CCC8; /* Café pastel claro */
+            background: #D7CCC8;
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 20px;
@@ -47,11 +50,11 @@
             width: 100%;
             padding: 10px;
             margin: 5px 0;
-            border: 1px solid #A1887F; /* Café medio */
+            border: 1px solid #A1887F;
             border-radius: 5px;
         }
         button {
-            background: #A1887F; /* Café medio */
+            background: #A1887F;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -59,12 +62,13 @@
             cursor: pointer;
         }
         button:hover {
-            background: #4E342E; /* Café oscuro */
+            background: #4E342E;
         }
     </style>
 </head>
 <body>
     {% include 'ecopuntosapp/navbar.html' %}
+    <div class="navbar-space"></div>
     <div class="container">
         <h1>Ecoforo</h1>
         <form id="postForm">
@@ -79,12 +83,14 @@
             <button type="submit">Publicar</button>
         </form>
         <hr>
-        <div id="posts"> {% for post in posts %} 
-            <div class="post"> 
-                <div class="post-author">{{ post.author }}</div> 
-                <div class="post-message">{{ post.message }}</div> 
-                <div class="post-date">{{ post.created_at }}</div> 
-            </div> {% endfor %} 
+        <div id="posts">
+            {% for post in posts %}
+            <div class="post">
+                <div class="post-author">{{ post.author }}</div>
+                <div class="post-message">{{ post.message }}</div>
+                <div class="post-date">{{ post.created_at }}</div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 
